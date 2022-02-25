@@ -47,16 +47,6 @@ $posts = [
 // var_dump($posts);
 $keys = array_keys($posts);
 
-for ($i = 0; $i < count($posts); $i++) {
-    $currentPosts = $posts[$keys[$i]];
-
-    for ($j = 0; $j < count($currentPosts); $j++) {
-        $title = $currentPosts[$j]['title'];
-        $author = $currentPosts[$j]['author'];
-        $text = $currentPosts[$j]['text'];
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -80,11 +70,17 @@ for ($i = 0; $i < count($posts); $i++) {
 
 <body>
     <ul>
-        <?php for ($i = 0; $i < count($posts); $i++) { ?>
+        <?php for ($i = 0; $i < count($posts); $i++) {
+            $currentPosts = $posts[$keys[$i]]; ?>
+
             <li>
                 <h3><?= $keys[$i] ?></h3>
 
-                <?php for ($j = 0; $j < count($currentPosts); $j++) { ?>
+                <?php for ($j = 0; $j < count($currentPosts); $j++) {
+                    $title = $currentPosts[$j]['title'];
+                    $author = $currentPosts[$j]['author'];
+                    $text = $currentPosts[$j]['text']; ?>
+
                     <p> Titolo: <?= $title ?> </p>
                     <p> Autore: <?= $author ?> </p>
                     <p> Testo: <?= $text ?> </p>
