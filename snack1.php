@@ -10,11 +10,7 @@ $age = $_GET["age"] ?? '';
 
 // var_dump($name , $mail , $age);
 
-if ((strlen($name) <= 3) || (!is_numeric($age)) || (!str_contains($mail, '.') || (!str_contains($mail, '@')))) {
-    $message = 'Accesso negato';
-} else {
-    $message = 'Accesso riuscito';
-}
+((strlen($name) <= 3) || (!is_numeric($age)) || (!str_contains($mail, '.') || (!str_contains($mail, '@')))) ? $message = 'Accesso negato' : $message = 'Accesso riuscito';
 
 ?>
 
