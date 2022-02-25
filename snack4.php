@@ -2,16 +2,20 @@
     Snack 4
 Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi in base ai punti: ogni punto un nuovo paragrafo. -->
 
-<?php 
+<?php
 $paragraph = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error aspernatur officia voluptatum rerum. Quibusdam laudantium quis quo corrupti cumque saepe, soluta ipsum dolores dicta omnis aperiam, temporibus incidunt et nulla. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi perferendis ducimus quis veniam necessitatibus ut voluptatibus, quas culpa, enim harum omnis sit explicabo, sequi distinctio voluptas porro! Explicabo, mollitia animi? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit amet, accusantium, laboriosam non et soluta earum aut similique illum, esse quos delectus assumenda temporibus deleniti eveniet consequatur quod eum nam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum doloremque voluptates soluta vero exercitationem sit. Ut harum nemo similique, vitae facere quisquam dolorum dolor ad quaerat neque necessitatibus, nisi pariatur!';
 
-$new_paragraph = str_replace('.' , '.<br />' , $paragraph);
+$new_paragraph = str_replace('.', '.<br />', $paragraph);
+// var_dump($new_paragraph);
 
+$parts = explode('.', $paragraph);
+// var_dump($parts);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +33,14 @@ $new_paragraph = str_replace('.' , '.<br />' , $paragraph);
 </style>
 
 <body>
-    <h3>Paragrafo formattato:</h3>
+    <h3>Paragrafo formattato aggiungendo un line break ad ogni .</h3>
     <p><?php echo $new_paragraph ?></p>
+    <br />
+    <hr />
+    <h3>paragrafo formattato creando un array di frasi ad ogni .</h3>
+    <?php for ($i = 0; $i < count($parts); $i++) { ?>
+        <p><?php echo $parts[$i] ?></p>
+    <?php } ?>
 </body>
+
 </html>
