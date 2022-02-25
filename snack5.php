@@ -4,6 +4,31 @@ Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro arra
 
 <?php
 
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
+$keys = array_keys($db);
+// var_dump($keys);
 
 ?>
 
@@ -24,10 +49,41 @@ Utilizzare questo array: https://pastebin.com/CkX3680A. Stampiamo il nostro arra
     body {
         font-family: 'Roboto', sans-serif;
     }
+
+    .box {
+        width: max-content;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .pm,
+    .teachers {
+        padding: 10px 20px;
+        margin: 10px;
+    }
+
+    .pm {
+        background-color: lightgreen;
+    }
+
+    .teachers {
+        background-color: lightgrey;
+    }
 </style>
 
 <body>
+    <div class="box">
+        <?php for ($i = 0; $i < count($db); $i++) {
+            $currentItem = $db[$keys[$i]]; ?>
+            <div class="<?php echo $keys[$i] ?>">
+                <?= $keys[$i] ?>:
 
+                <?php for ($j = 0; $j < count($currentItem); $j++) { ?>
+                    <li> <?php echo $currentItem[$j]['name'] . ' ' . $currentItem[$j]['lastname']; ?></li>
+                <?php } ?>
+            </div>
+        <?php } ?>
+    </div>
 </body>
 
 </html>

@@ -39,7 +39,7 @@ $parts = explode('.', $paragraph);
     <hr />
     <h3>paragrafo formattato creando un array di frasi ad ogni .</h3>
     <?php for ($i = 0; $i < count($parts); $i++) { ?>
-        <p><?php echo $parts[$i] ?></p>
+        <p><?php echo $parts[$i] ?>.</p>
     <?php } ?>
 </body>
 

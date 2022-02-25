@@ -76,14 +76,10 @@ $keys = array_keys($posts);
             <li>
                 <h3><?= $keys[$i] ?></h3>
 
-                <?php for ($j = 0; $j < count($currentPosts); $j++) {
-                    $title = $currentPosts[$j]['title'];
-                    $author = $currentPosts[$j]['author'];
-                    $text = $currentPosts[$j]['text']; ?>
-
-                    <p> Titolo: <?= $title ?> </p>
-                    <p> Autore: <?= $author ?> </p>
-                    <p> Testo: <?= $text ?> </p>
+                <?php for ($j = 0; $j < count($currentPosts); $j++) { ?>
+                    <p> Titolo: <?= $currentPosts[$j]['title'] ?> </p>
+                    <p> Autore: <?= $currentPosts[$j]['author'] ?> </p>
+                    <p> Testo: <?= $currentPosts[$j]['text'] ?> </p>
                     <hr />
                 <?php } ?>
             </li>
