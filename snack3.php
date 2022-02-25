@@ -12,7 +12,7 @@ $quantity = 15;
 $rndNums = [];
 while (count($rndNums) < $quantity) {
     do {
-        $rndNum = mt_rand(1, 100);
+        $rndNum = mt_rand($min, $max);
         // var_dump($rndNum);
     } while (in_array($rndNum, $rndNums));
     $rndNums[] = $rndNum;
